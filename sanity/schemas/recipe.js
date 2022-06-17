@@ -4,7 +4,7 @@ export default {
   type: "document",
   fields: [
     {
-      name: "name",
+      name: "title",
       title: "Name",
       type: "string",
     },
@@ -13,7 +13,7 @@ export default {
       title: "Slug",
       type: "slug",
       options: {
-        source: "name",
+        source: "title",
         maxLength: 96,
       },
     },
