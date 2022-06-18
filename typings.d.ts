@@ -3,6 +3,17 @@ export type Slug = {
   current: string;
 };
 
+export type Accessory = {
+  _id: string;
+  title: string;
+};
+
+export type Step = {
+  _key: string;
+  text: string;
+  tip: boolean;
+};
+
 export interface Category {
   _id: string;
   _rev: string;
@@ -19,4 +30,10 @@ export interface Recipe {
   title: string;
   slug: Slug;
   time: string;
+  photo: string;
+  category: string;
+  categorySlug: string;
+  ingredients: string[];
+  steps: Step[];
+  accessories: Accessory[];
 }
