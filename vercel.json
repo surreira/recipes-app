@@ -1,0 +1,8 @@
+{
+  "redirects": [
+    {
+      "source": "/gestao",
+      "destination": "https://receitas-tm.sanity.studio"
+    }
+  ]
+}
