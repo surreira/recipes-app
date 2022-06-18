@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { ReactNode } from "react";
-import Header from "./header";
+import { Header } from "./header";
 
 interface LayoutProps {
   children: ReactNode;
@@ -20,10 +20,7 @@ export const Layout = ({ children }: LayoutProps) => {
           name="apple-mobile-web-app-status-bar-style"
           content="black-translucent"
         />
-        <meta
-          name="viewport"
-          content="initial-scale=1, viewport-fit=cover, user-scalable=no"
-        />
+        <meta name="viewport" content="initial-scale=1, viewport-fit=cover" />
       </Head>
 
       <Header />
