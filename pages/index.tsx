@@ -44,7 +44,7 @@ const Home = ({ categories }: PageProps) => {
       </header>
 
       <main className="grid w-full max-w-3xl grid-cols-2 gap-4 mt-8 mb-16 sm:mt-16 lg:grid-cols-3">
-        {categories.map((category) => (
+        {categories.map((category: Category) => (
           <div
             className="w-full bg-green-300 border border-green-700 rounded-md shadow-md h-28 sm:w-60 sm:mx-auto active:shadow-none"
             key={category._id}

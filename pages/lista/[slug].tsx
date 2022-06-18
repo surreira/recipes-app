@@ -2,7 +2,7 @@ import type { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
 import Link from "next/link";
 import sanityClient from "../../lib/sanityClient";
-import type { Category } from "../../typings";
+import type { Category, Recipe } from "../../typings";
 
 interface PageProps {
   category: Category;
@@ -12,7 +12,7 @@ const Lista = ({ category }: PageProps) => {
   return (
     <div className="max-w-5xl px-4 mx-auto mb-8 md:mb-24">
       <Head>
-        <title>{category.title}</title>
+        <title>Lista {category.title} - ReceitasTM</title>
       </Head>
 
       <header className="flex flex-col mt-4 text-center md:mt-24">
@@ -22,7 +22,7 @@ const Lista = ({ category }: PageProps) => {
       </header>
 
       <div className="grid grid-cols-1 gap-4 mt-8 lg:gap-6 md:mt-24 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-        {category.recipes.map((recipe) => (
+        {category.recipes.map((recipe: Recipe) => (
           <article
             key={recipe._id}
             className="border border-green-700 rounded-lg shadow-md active:shadow-none h-28 sm:h-32 md:h-52"
@@ -74,7 +74,7 @@ const Lista = ({ category }: PageProps) => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const category = await sanityClient.fetch(
-    `*[_type == 'category' && visibility == true && slug.current == '${params?.slug}']{
+    `*[_type == 'category' && visibility == true && slug.current == $slug]{
       _id,
       title,
       'recipes': *[_type == 'recipe' && references(^._id)]{
@@ -83,7 +83,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         'slug': slug.current,
         time,
       },
-    }[0]`
+    }[0]`,
+    { slug: params?.slug }
   );
 
   return {

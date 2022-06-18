@@ -2,9 +2,9 @@ import Head from "next/head";
 import { ReactNode } from "react";
 import Header from "./header";
 
-type LayoutProps = {
+interface LayoutProps {
   children: ReactNode;
-};
+}
 
 export const Layout = ({ children }: LayoutProps) => {
   return (
