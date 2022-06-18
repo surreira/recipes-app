@@ -1,3 +1,8 @@
+export type Slug = {
+  _type: "slug";
+  current: string;
+};
+
 export interface Category {
   _id: string;
   _rev: string;
@@ -6,9 +11,12 @@ export interface Category {
   _updatedAt: string;
   title: string;
   slug: Slug;
+  recipes: Recipe[];
 }
 
-export type Slug = {
-  _type: "slug";
-  current: string;
-};
+export interface Recipe {
+  _id: string;
+  title: string;
+  slug: Slug;
+  time: string;
+}
