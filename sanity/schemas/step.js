@@ -14,11 +14,5 @@ export default {
       type: "boolean",
       initialValue: false,
     },
-    {
-      name: "publishedAt",
-      title: "Published at",
-      type: "datetime",
-      hidden: "true",
-    },
   ],
 };

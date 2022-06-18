@@ -17,10 +17,5 @@ export default {
         maxLength: 96,
       },
     },
-    {
-      name: "publishedAt",
-      title: "Published at",
-      type: "datetime",
-    },
   ],
 };
