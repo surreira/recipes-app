@@ -14,6 +14,14 @@ export type Step = {
   tip: boolean;
 };
 
+export interface SanityImage {
+  asset: {
+    _ref: string;
+    _type: string;
+  };
+  _type: string;
+}
+
 export interface Category {
   _id: string;
   _rev: string;
@@ -30,7 +38,7 @@ export interface Recipe {
   title: string;
   slug: Slug;
   time: string;
-  photo: string;
+  photo: SanityImage;
   category: string;
   categorySlug: string;
   ingredients: string[];

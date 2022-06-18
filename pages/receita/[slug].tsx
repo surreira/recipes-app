@@ -2,6 +2,7 @@ import type { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
+import { RecipeImage } from "../../components/recipe-image";
 import { StepSlider } from "../../components/step-slider";
 import sanityClient from "../../lib/sanityClient";
 import type { Accessory, Recipe, Step } from "../../typings";
@@ -20,7 +21,13 @@ const Receita = ({ recipe }: PageProps) => {
       <div className="flex flex-row h-screen pt-12 overflow-y-hidden text-gray-800">
         <div className="flex flex-col items-center justify-between w-1/3 mr-6">
           <div className="w-full h-56 mb-4 border border-green-700 rounded-md">
-            <div className="relative bg-green-300 h-44 rounded-t-md"></div>
+            <div className="relative bg-green-300 h-44 rounded-t-md">
+              <RecipeImage
+                alt={`Foto da receita ${recipe.title}`}
+                image={recipe.photo}
+                className="rounded-t-md"
+              />
+            </div>
 
             <div className="flex justify-between h-12 px-4">
               <div className="flex flex-row items-center">
