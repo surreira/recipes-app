@@ -9,6 +9,12 @@ export default {
       type: "string",
     },
     {
+      name: "visibility",
+      title: "Visibility",
+      type: "boolean",
+      initialValue: true,
+    },
+    {
       name: "slug",
       title: "Slug",
       type: "slug",
