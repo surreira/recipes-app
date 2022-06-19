@@ -24,13 +24,17 @@ export default async function handler(
       body: { type, slug, categorySlug },
     } = req;
 
+    console.log("🍳 rev.", type, slug);
+
     switch (type) {
       case "recipe":
         await res.unstable_revalidate(`/lista/${categorySlug}`);
         await res.unstable_revalidate(`/receita/${slug}`);
         return res.json({ message: `Revalidated "${type}": "${slug}"` });
       case "category":
+        console.log("🍳 rev. category!");
         await res.unstable_revalidate("/");
+        console.log("🍳 rev. home!");
         await res.unstable_revalidate(`/lista/${slug}`);
         return res.json({ message: `Revalidated "${type}"` });
     }
