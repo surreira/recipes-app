@@ -9,6 +9,11 @@ interface PageProps {
 }
 
 const Lista = ({ category }: PageProps) => {
+  console.log("🍳", category);
+  if (!category) {
+    return null;
+  }
+
   return (
     <div className="max-w-5xl px-4 mx-auto mb-8 md:mb-24">
       <Head>
