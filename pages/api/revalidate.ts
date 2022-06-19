@@ -34,10 +34,10 @@ export default async function handler(
         await res.unstable_revalidate(`/receita/${slug}`);
         return res.json({ message: `Revalidated "${type}": "${slug}"` });
       case "category":
+        await res.unstable_revalidate(`/lista/${slug}`);
         console.log("🍳 rev. category!");
         await res.unstable_revalidate("/");
         console.log("🍳 rev. home!");
-        await res.unstable_revalidate(`/lista/${slug}`);
         return res.json({ message: `Revalidated "${type}"` });
     }
 
