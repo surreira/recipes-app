@@ -9,11 +9,6 @@ interface PageProps {
 }
 
 const Lista = ({ category }: PageProps) => {
-  console.log("🍳", category);
-  if (!category) {
-    return null;
-  }
-
   return (
     <div className="max-w-5xl px-4 mx-auto mb-8 md:mb-24">
       <Head>
@@ -79,7 +74,7 @@ const Lista = ({ category }: PageProps) => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const category = await sanityClient.fetch(
-    `*[_type == 'category' && visibility == true && slug.current == $slug]{
+    `*[_type == 'category' && slug.current == $slug]{
       _id,
       title,
       'recipes': *[_type == 'recipe' && references(^._id)]{
@@ -100,8 +95,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const categories =
-    await sanityClient.fetch(`*[_type == 'category' && visibility == true]{
+  const categories = await sanityClient.fetch(`*[_type == 'category']{
     'slug': slug.current
   }`);
 

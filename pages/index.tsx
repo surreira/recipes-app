@@ -65,8 +65,7 @@ const Home = ({ categories }: PageProps) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const categories =
-    await sanityClient.fetch(`*[_type == 'category' && visibility == true]{
+  const categories = await sanityClient.fetch(`*[_type == 'category']{
     _id,
     title,
     'slug': slug.current,
