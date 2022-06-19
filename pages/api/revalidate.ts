@@ -24,25 +24,20 @@ export default async function handler(
       body: { type, slug, categorySlug },
     } = req;
 
-    console.log("🍳 rev.", type, slug, categorySlug);
-
     switch (type) {
       case "recipe":
-        console.log("🍳 rev. recipe list");
         await res.unstable_revalidate(`/lista/${categorySlug}`);
-        console.log("🍳 rev. recipe detail");
         await res.unstable_revalidate(`/receita/${slug}`);
         return res.json({ message: `Revalidated "${type}": "${slug}"` });
       case "category":
         await res.unstable_revalidate(`/lista/${slug}`);
-        console.log("🍳 rev. category!");
         await res.unstable_revalidate("/");
-        console.log("🍳 rev. home!");
         return res.json({ message: `Revalidated "${type}"` });
     }
 
     return res.json({ message: "Unmanaged type" });
   } catch (error) {
+    console.error(error);
     return res.status(500).send({ message: "Error revalidating." });
   }
 }
