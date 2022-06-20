@@ -12,10 +12,10 @@ export default async function handler(
   res: NextApiResponse<Data>
 ) {
   if (req.method !== "POST") {
-    return res.status(401).json({ message: "Must be POST request." });
+    return res.status(400).json({ message: "Must be POST request." });
   }
 
-  if (!isValidRequest(req, secret || "")) {
+  if (!isValidRequest(req, secret!)) {
     return res.status(401).json({ message: "Unauthorized." });
   }
 
