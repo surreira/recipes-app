@@ -6,25 +6,33 @@ type Data = {
   message: string;
 };
 
-const QUERY: string = `
-  * [_type == "recipe" && !(_id in path("drafts.**")) && defined(slug.current)]{
-    _type,
-    _rev,
-    title,
-    time,
-    "objectID": _id,
-    ingredients,
-    "mainImageRef": photo.asset._ref,
-    "steps": steps[tip == false].text,
-    "category": category->{
-      _id,
-      title
-    },
-    "accessories": accessories[]->{
-      _id,
-      title
-    }
+export const RECIPE_PROJECTION: string = `
+{
+  _type,
+  _rev,
+  title,
+  time,
+  "objectID": _id,
+  ingredients,
+  "mainImageRef": photo.asset._ref,
+  "steps": steps[tip == false].text,
+  "category": category->{
+    _id,
+    title
+  },
+  "accessories": accessories[]->{
+    _id,
+    title
   }
+}
+`;
+
+const QUERY: string = `
+  *[
+    _type == "recipe"
+    && !(_id in path("drafts.**"))
+    && defined(slug.current)
+  ]${RECIPE_PROJECTION}
 `;
 
 export default async function handler(
