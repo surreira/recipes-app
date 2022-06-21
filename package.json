@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@sanity/client": "^3.3.2",
+    "algoliasearch": "^4.13.1",
     "next": "latest",
     "next-sanity-image": "^3.2.1",
     "react": "18.1.0",
