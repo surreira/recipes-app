@@ -1,7 +1,7 @@
 import type { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
 import Link from "next/link";
-import sanityClient from "../../lib/sanityClient";
+import sanityClient from "../../lib/sanity";
 import type { Category, Recipe } from "../../typings";
 
 interface PageProps {

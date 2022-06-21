@@ -1,6 +1,6 @@
 import { useNextSanityImage } from "next-sanity-image";
 import Image from "next/image";
-import sanityClient from "../lib/sanityClient";
+import sanityClient from "../lib/sanity";
 import { SanityImage } from "../typings";
 
 interface ComponentProps {

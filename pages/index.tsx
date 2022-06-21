@@ -1,6 +1,6 @@
 import type { GetStaticProps } from "next";
 import Link from "next/link";
-import sanityClient from "../lib/sanityClient";
+import sanityClient from "../lib/sanity";
 import { Category } from "../typings";
 
 interface PageProps {
