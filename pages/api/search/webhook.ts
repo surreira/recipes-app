@@ -1,8 +1,8 @@
+import { algoliaIndex } from "@/lib/algolia";
+import sanityClient from "@/lib/sanity";
 import { isValidRequest } from "@sanity/webhook";
 import type { NextApiRequest, NextApiResponse } from "next";
 import indexer from "sanity-algolia";
-import { algoliaIndex } from "../../../lib/algolia";
-import sanityClient from "../../../lib/sanity";
 import { RECIPE_PROJECTION } from "./index-all";
 
 type Data = {

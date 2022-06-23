@@ -1,10 +1,10 @@
+import { RecipeImage } from "@/components/recipe-image";
+import { StepSlider } from "@/components/step-slider";
+import sanityClient from "@/lib/sanity";
 import type { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
-import { RecipeImage } from "../../components/recipe-image";
-import { StepSlider } from "../../components/step-slider";
-import sanityClient from "../../lib/sanity";
 import type { Accessory, Recipe, Step } from "../../typings";
 
 interface PageProps {

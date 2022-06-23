@@ -1,6 +1,6 @@
+import { algoliaIndex } from "@/lib/algolia";
+import sanity from "@/lib/sanity";
 import type { NextApiRequest, NextApiResponse } from "next";
-import { algoliaIndex } from "../../../lib/algolia";
-import sanity from "../../../lib/sanity";
 
 type Data = {
   message: string;
