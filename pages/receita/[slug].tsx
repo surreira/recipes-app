@@ -1,4 +1,4 @@
-import RecipeImage from "@/components/recipe-image";
+import FillImage from "@/components/fill-image";
 import StepSlider from "@/components/step-slider";
 import sanityClient from "@/lib/sanity";
 import type { Accessory, Recipe, Step } from "@/types/data";
@@ -22,10 +22,10 @@ export default function Receita({ recipe }: ReceitaPageProps): JSX.Element {
         <div className="flex flex-col items-center justify-between w-1/3 mr-6">
           <div className="w-full h-56 mb-4 border border-green-700 rounded-md">
             <div className="relative bg-green-300 h-44 rounded-t-md">
-              <RecipeImage
+              <FillImage
                 alt={`Foto da receita ${recipe.title}`}
                 image={recipe.photo}
-                className="rounded-t-md"
+                className="object-cover rounded-t-md"
               />
             </div>
 

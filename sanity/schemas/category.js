@@ -22,5 +22,22 @@ export default {
       title: "Position",
       type: "number",
     },
+    {
+      name: "photo",
+      title: "Photo",
+      type: "image",
+      fields: [
+        {
+          name: "alt",
+          title: "Alt",
+          type: "string",
+        },
+        {
+          name: "attribution",
+          title: "Attribution",
+          type: "string",
+        },
+      ],
+    },
   ],
 };

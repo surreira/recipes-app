@@ -12,9 +12,9 @@ export default function Header({ title }: HeaderProps): JSX.Element {
       <div className="flex items-center space-x-2 sm:space-x-4">
         <Link href="/">
           <a>
-            <h1 className="text-2xl font-black sm:text-4xl text-slate-800">
+            <h1 className="flex items-center text-2xl font-black sm:items-start sm:text-4xl text-slate-800">
               Receitas{" "}
-              <span className="inline-block px-2 py-1 text-xl font-black leading-none text-green-400 rounded-lg sm:text-3xl bg-slate-800">
+              <span className="inline-block px-2 py-px ml-1 text-xl font-black leading-none text-green-400 rounded-lg sm:text-3xl bg-slate-800">
                 TM
               </span>
             </h1>

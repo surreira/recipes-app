@@ -31,6 +31,7 @@ export interface Category {
   slug: Slug;
   recipes: Recipe[];
   position: number;
+  photo: SanityImage;
 }
 
 export interface Recipe {

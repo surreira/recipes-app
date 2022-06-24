@@ -1,3 +1,4 @@
+import CategoryCard from "@/components/category-card";
 import Header from "@/components/header";
 import GitHubLogo from "@/components/icons/github";
 import sanityClient from "@/lib/sanity";
@@ -14,20 +15,11 @@ export default function Home({ categories }: HomePageProps): JSX.Element {
     <div className="flex flex-col items-center max-w-5xl min-h-screen px-4 mx-auto text-slate-800">
       <Header />
 
-      <main className="grid w-full max-w-3xl grid-cols-2 gap-4 mt-8 mb-16 sm:mt-16 lg:grid-cols-3">
+      <section className="grid w-full grid-cols-1 gap-4 mt-4 mb-16 lg:gap-6 sm:mt-8 sm:grid-cols-2 lg:grid-cols-3">
         {categories.map((category: Category) => (
-          <div
-            className="w-full bg-green-300 border border-green-700 rounded-md shadow-md h-28 sm:w-60 sm:mx-auto active:shadow-none"
-            key={category._id}
-          >
-            <Link href={`/lista/${category.slug}`}>
-              <a className="flex items-center justify-center w-full h-full text-2xl font-semibold text-center sm:text-3xl text-slate-800">
-                {category.title}
-              </a>
-            </Link>
-          </div>
+          <CategoryCard category={category} key={category._id} />
         ))}
-      </main>
+      </section>
 
       <footer className="flex items-center justify-center my-10">
         <Link href="https://github.com/surreira/recipes-app">
@@ -46,6 +38,7 @@ export const getStaticProps: GetStaticProps = async () => {
     title,
     'slug': slug.current,
     position,
+    photo,
   } | order(position asc)`);
 
   return {

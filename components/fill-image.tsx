@@ -3,17 +3,19 @@ import { SanityImage } from "@/types/data";
 import { useNextSanityImage } from "next-sanity-image";
 import Image from "next/image";
 
-interface RecipeImageProps {
-  alt: string;
-  className: string;
+interface FillImageProps {
+  alt?: string;
+  attribution?: string;
+  className?: string;
   image: SanityImage;
 }
 
-export default function RecipeImage({
+export default function FillImage({
   alt,
   className,
+  attribution,
   image,
-}: RecipeImageProps): JSX.Element | null {
+}: FillImageProps): JSX.Element | null {
   const imageProps = useNextSanityImage(sanityClient, image);
 
   if (!imageProps) {
@@ -23,15 +25,13 @@ export default function RecipeImage({
   return (
     <Image
       alt={alt}
+      title={attribution}
       className={className}
       layout="fill"
       loader={imageProps.loader}
       priority
       quality={80}
-      sizes="(max-width: 1024px) 100vw, 320px"
       src={imageProps.src}
-      objectFit="cover"
-      objectPosition="center center"
     />
   );
 }

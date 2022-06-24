@@ -18,7 +18,7 @@ export default function Lista({ category }: ListaPageProps): JSX.Element {
 
       <Header title={category.title} />
 
-      <div className="grid grid-cols-1 gap-4 mt-8 lg:gap-6 md:mt-24 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+      <div className="grid grid-cols-1 gap-4 mt-6 lg:gap-6 sm:mt-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {category.recipes.map((recipe: Recipe) => (
           <article
             key={recipe._id}
