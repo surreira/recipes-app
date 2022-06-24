@@ -45,7 +45,8 @@ export const getStaticProps: GetStaticProps = async () => {
     _id,
     title,
     'slug': slug.current,
-  }`);
+    position,
+  } | order(position asc)`);
 
   return {
     props: {

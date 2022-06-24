@@ -17,5 +17,10 @@ export default {
         maxLength: 96,
       },
     },
+    {
+      name: "position",
+      title: "Position",
+      type: "number",
+    },
   ],
 };
