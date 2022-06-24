@@ -1,4 +1,3 @@
-import Header from "@/components/header";
 import Head from "next/head";
 
 interface LayoutProps {
@@ -22,7 +21,7 @@ export default function Layout({ children }: LayoutProps): JSX.Element {
         <meta name="viewport" content="initial-scale=1, viewport-fit=cover" />
       </Head>
 
-      <Header />
+      <div className="fixed top-0 z-10 w-full h-3 bg-slate-800" />
 
       {children}
     </div>

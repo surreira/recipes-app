@@ -1,3 +1,4 @@
+import Header from "@/components/header";
 import sanityClient from "@/lib/sanity";
 import type { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
@@ -15,11 +16,7 @@ export default function Lista({ category }: ListaPageProps): JSX.Element {
         <title>Lista {category.title} - ReceitasTM</title>
       </Head>
 
-      <header className="flex flex-col mt-4 text-center md:mt-24">
-        <h1 className="text-4xl font-bold sm:text-5xl md:text-6xl">
-          {category.title}
-        </h1>
-      </header>
+      <Header title={category.title} />
 
       <div className="grid grid-cols-1 gap-4 mt-8 lg:gap-6 md:mt-24 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {category.recipes.map((recipe: Recipe) => (
