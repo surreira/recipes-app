@@ -27,7 +27,7 @@ export default function CategoryCard({ category }: CategoryCardProps) {
             className={clsx(
               "text-2xl font-semibold sm:text-3xl px-4 py-2 rounded-md",
               category.photo
-                ? "text-slate-900 backdrop-blur-md bg-slate-50/40"
+                ? "text-slate-900 backdrop-blur-md bg-slate-50/50"
                 : "text-slate-800"
             )}
           >
