@@ -1,4 +1,5 @@
 import Header from "@/components/header";
+import GitHubLogo from "@/components/icons/github";
 import sanityClient from "@/lib/sanity";
 import type { GetStaticProps } from "next";
 import Link from "next/link";
@@ -27,6 +28,14 @@ export default function Home({ categories }: HomePageProps): JSX.Element {
           </div>
         ))}
       </main>
+
+      <footer className="flex items-center justify-center my-10">
+        <Link href="https://github.com/surreira/recipes-app">
+          <a className="text-gray-200">
+            <GitHubLogo className="w-6 h-6 sm:w-8 sm:h-8" />
+          </a>
+        </Link>
+      </footer>
     </div>
   );
 }
