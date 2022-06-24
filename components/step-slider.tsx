@@ -1,12 +1,15 @@
 import { ReactNode, useEffect, useState } from "react";
 import { Events, Link as LinkScroll } from "react-scroll";
 
-interface ComponentProps {
+interface StepsProps {
   title: string;
   children: ReactNode[];
 }
 
-export const StepSlider = ({ title, children }: ComponentProps) => {
+export default function StepSlider({
+  title,
+  children,
+}: StepsProps): JSX.Element {
   const [active, setActive] = useState(1);
   const [length, setLength] = useState(0);
 
@@ -68,4 +71,4 @@ export const StepSlider = ({ title, children }: ComponentProps) => {
       </div>
     </div>
   );
-};
+}

@@ -1,12 +1,11 @@
+import Header from "@/components/header";
 import Head from "next/head";
-import { ReactNode } from "react";
-import { Header } from "./header";
 
 interface LayoutProps {
-  children: ReactNode;
+  children: React.ReactNode;
 }
 
-export const Layout = ({ children }: LayoutProps) => {
+export default function Layout({ children }: LayoutProps): JSX.Element {
   return (
     <div style={{ WebkitTapHighlightColor: "transparent" }}>
       <Head>
@@ -28,4 +27,4 @@ export const Layout = ({ children }: LayoutProps) => {
       {children}
     </div>
   );
-};
+}

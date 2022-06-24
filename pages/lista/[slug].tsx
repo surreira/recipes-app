@@ -4,11 +4,11 @@ import Head from "next/head";
 import Link from "next/link";
 import type { Category, Recipe } from "../../typings";
 
-interface PageProps {
+interface ListaPageProps {
   category: Category;
 }
 
-const Lista = ({ category }: PageProps) => {
+export default function Lista({ category }: ListaPageProps): JSX.Element {
   return (
     <div className="max-w-5xl px-4 mx-auto mb-8 md:mb-24">
       <Head>
@@ -70,7 +70,7 @@ const Lista = ({ category }: PageProps) => {
       </div>
     </div>
   );
-};
+}
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const category = await sanityClient.fetch(
@@ -104,5 +104,3 @@ export const getStaticPaths: GetStaticPaths = async () => {
     fallback: false,
   };
 };
-
-export default Lista;

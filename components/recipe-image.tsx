@@ -1,15 +1,19 @@
+import sanityClient from "@/lib/sanity";
 import { useNextSanityImage } from "next-sanity-image";
 import Image from "next/image";
-import sanityClient from "../lib/sanity";
 import { SanityImage } from "../typings";
 
-interface ComponentProps {
+interface RecipeImageProps {
   alt: string;
   className: string;
   image: SanityImage;
 }
 
-export const RecipeImage = ({ alt, className, image }: ComponentProps) => {
+export default function RecipeImage({
+  alt,
+  className,
+  image,
+}: RecipeImageProps): JSX.Element | null {
   const imageProps = useNextSanityImage(sanityClient, image);
 
   if (!imageProps) {
@@ -30,4 +34,4 @@ export const RecipeImage = ({ alt, className, image }: ComponentProps) => {
       objectPosition="center center"
     />
   );
-};
+}

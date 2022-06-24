@@ -3,11 +3,11 @@ import type { GetStaticProps } from "next";
 import Link from "next/link";
 import { Category } from "../typings";
 
-interface PageProps {
+interface HomePageProps {
   categories: Category[];
 }
 
-const Home = ({ categories }: PageProps) => {
+export default function Home({ categories }: HomePageProps): JSX.Element {
   return (
     <div className="flex flex-col items-center max-w-5xl min-h-screen px-4 mx-auto text-slate-800">
       <header className="flex flex-col mt-4 text-center md:mt-24">
@@ -62,7 +62,7 @@ const Home = ({ categories }: PageProps) => {
       </main>
     </div>
   );
-};
+}
 
 export const getStaticProps: GetStaticProps = async () => {
   const categories = await sanityClient.fetch(`*[_type == 'category']{
@@ -77,5 +77,3 @@ export const getStaticProps: GetStaticProps = async () => {
     },
   };
 };
-
-export default Home;

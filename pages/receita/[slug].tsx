@@ -1,5 +1,5 @@
-import { RecipeImage } from "@/components/recipe-image";
-import { StepSlider } from "@/components/step-slider";
+import RecipeImage from "@/components/recipe-image";
+import StepSlider from "@/components/step-slider";
 import sanityClient from "@/lib/sanity";
 import type { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
@@ -7,11 +7,11 @@ import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 import type { Accessory, Recipe, Step } from "../../typings";
 
-interface PageProps {
+interface ReceitaPageProps {
   recipe: Recipe;
 }
 
-const Receita = ({ recipe }: PageProps) => {
+export default function Receita({ recipe }: ReceitaPageProps): JSX.Element {
   return (
     <div className="max-w-5xl px-4 mx-auto">
       <Head>
@@ -124,9 +124,7 @@ const Receita = ({ recipe }: PageProps) => {
       </div>
     </div>
   );
-};
-
-export default Receita;
+}
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const recipe = await sanityClient.fetch(
