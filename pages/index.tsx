@@ -1,9 +1,9 @@
 import Header from "@/components/header";
 import GitHubLogo from "@/components/icons/github";
 import sanityClient from "@/lib/sanity";
+import { Category } from "@/types/data";
 import type { GetStaticProps } from "next";
 import Link from "next/link";
-import { Category } from "../typings";
 
 interface HomePageProps {
   categories: Category[];

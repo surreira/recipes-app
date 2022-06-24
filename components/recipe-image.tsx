@@ -1,7 +1,7 @@
 import sanityClient from "@/lib/sanity";
+import { SanityImage } from "@/types/data";
 import { useNextSanityImage } from "next-sanity-image";
 import Image from "next/image";
-import { SanityImage } from "../typings";
 
 interface RecipeImageProps {
   alt: string;

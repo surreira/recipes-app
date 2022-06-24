@@ -1,9 +1,9 @@
 import Header from "@/components/header";
 import sanityClient from "@/lib/sanity";
+import type { Category, Recipe } from "@/types/data";
 import type { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
 import Link from "next/link";
-import type { Category, Recipe } from "../../typings";
 
 interface ListaPageProps {
   category: Category;
