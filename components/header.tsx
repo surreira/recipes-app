@@ -24,7 +24,9 @@ export default function Header({ title }: HeaderProps): JSX.Element {
         {title && (
           <div className="flex items-center space-x-2 text-slate-800">
             <ChevronRight className="w-6 h-6 sm:w-8 sm:h-8" />
-            <p className="text-xl text-slate-600">{title}</p>
+            <p className="leading-none text-md sm:text-xl text-slate-600">
+              {title}
+            </p>
           </div>
         )}
       </div>
