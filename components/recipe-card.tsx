@@ -3,6 +3,7 @@ import ClockIcon from "@/components/icons/clock";
 import { Recipe } from "@/types/data";
 import clsx from "clsx";
 import Link from "next/link";
+import FoldersIcon from "./icons/folders";
 
 interface RecipeCardProps {
   recipe: Recipe;
@@ -37,11 +38,20 @@ export default function RecipeCard({ recipe }: RecipeCardProps): JSX.Element {
               </h2>
             </div>
           </div>
-          <div className="flex items-center px-2 h-1/4">
-            <ClockIcon className="w-4 h-4 mr-1 text-green-700" />
-            {recipe.time?.length !== 0 && (
-              <p className="text-sm">{recipe.time}</p>
+          <div className="flex flex-row justify-between w-full px-2 h-1/4">
+            {recipe.category && (
+              <div className="flex flex-row items-center">
+                <FoldersIcon className="w-5 h-5 text-green-700" />
+                <p className="pl-2 text-sm md:text-base">{recipe.category}</p>
+              </div>
             )}
+
+            <div className="flex flex-row items-center">
+              <ClockIcon className="w-5 h-5 text-green-700" />
+              {recipe.time?.length !== 0 && (
+                <p className="pl-2 text-sm md:text-base">{recipe.time}</p>
+              )}
+            </div>
           </div>
         </a>
       </Link>

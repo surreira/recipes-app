@@ -29,14 +29,14 @@ export default function StepSlider({
   }, [length]);
 
   return (
-    <div className="box-border w-2/3">
-      <div className="flex flex-row items-center justify-between mb-4">
+    <div className="box-border w-full md:w-2/3">
+      <div className="flex flex-row items-center justify-between mt-12 mb-4 md:mt-0">
         <LinkScroll
           to={`step-${active - 1}`}
           containerId="scroll-container"
           duration={300}
           smooth={true}
-          className={`px-4 py-2 rounded-md border text-gray-800 active:bg-green-100 ${
+          className={`hidden md:block px-4 py-2 rounded-md border text-gray-800 active:bg-green-100 ${
             active === 1
               ? "bg-green-100 border-green-100 cursor-not-allowed active:shadow-none"
               : "bg-green-500 border-green-500 cursor-pointer active:shadow-inner"
@@ -45,14 +45,14 @@ export default function StepSlider({
           Anterior
         </LinkScroll>
 
-        <h1 className="px-4 text-xl font-bold">{title}</h1>
+        <h1 className="hidden px-4 text-xl font-bold md:block">{title}</h1>
 
         <LinkScroll
           to={`step-${active + 1}`}
           containerId="scroll-container"
           duration={300}
           smooth={true}
-          className={`px-4 py-2 rounded-md border text-gray-800 active:bg-green-100 ${
+          className={`hidden md:block px-4 py-2 rounded-md border text-gray-800 active:bg-green-100 ${
             active === length
               ? "bg-green-100 border-green-100 cursor-not-allowed active:shadow-none"
               : "bg-green-500 border-green-500 cursor-pointer active:shadow-inner"
@@ -63,11 +63,11 @@ export default function StepSlider({
       </div>
 
       <div
-        className="h-full mb-64 space-y-4 overflow-y-hidden"
+        className="h-full mb-16 space-y-4 overflow-y-hidden md:mb-64"
         id="scroll-container"
       >
         {children}
-        <div className="h-screen"></div>
+        <div className="md:h-screen"></div>
       </div>
     </div>
   );

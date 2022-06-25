@@ -66,6 +66,7 @@ export const getStaticProps: GetStaticProps = async () => {
     title,
     time,
     "slug": slug.current,
+    'category': category->title,
     photo,
     _createdAt,
   } | order(_createdAt desc)[0..2]`);
