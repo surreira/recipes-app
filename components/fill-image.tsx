@@ -7,14 +7,18 @@ interface FillImageProps {
   alt?: string;
   attribution?: string;
   className?: string;
+  height?: number;
   image: SanityImage;
+  width?: number;
 }
 
 export default function FillImage({
-  alt,
-  className,
-  attribution,
+  alt = "",
+  attribution = "",
+  className = "",
+  height = 210,
   image,
+  width = 360,
 }: FillImageProps): JSX.Element | null {
   const imageProps = useNextSanityImage(sanityClient, image);
 
@@ -27,11 +31,15 @@ export default function FillImage({
       alt={alt}
       title={attribution}
       className={className}
-      layout="fill"
+      layout="responsive"
+      width={width}
+      height={height}
       loader={imageProps.loader}
       priority
       quality={80}
       src={imageProps.src}
+      objectFit="cover"
+      objectPosition="center center"
     />
   );
 }

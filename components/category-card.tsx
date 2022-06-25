@@ -9,32 +9,37 @@ interface CategoryCardProps {
 
 export default function CategoryCard({ category }: CategoryCardProps) {
   return (
-    <Link href={`/lista/${category.slug}`}>
-      <a
-        className={clsx(
-          "relative h-48 sm:h-40 overflow-hidden rounded-md shadow-md shadow-slate-200 cursor-pointer active:shadow-none",
-          !category.photo && "bg-green-300"
-        )}
-      >
-        <FillImage
-          image={category.photo}
-          className="object-cover w-full h-full brightness-75"
-          alt={`Foto da categoria ${category.title}`}
-        />
-
-        <div className="absolute inset-0 flex items-center justify-center">
-          <p
+    <div className="h-48 rounded-md shadow-md cursor-pointer sm:h-44 active:shadow-none">
+      <Link href={`/lista/${category.slug}`}>
+        <a className="w-full h-full">
+          <div
             className={clsx(
-              "text-2xl font-semibold sm:text-3xl px-4 py-2 rounded-md",
-              category.photo
-                ? "text-slate-900 backdrop-blur-md bg-slate-50/50"
-                : "text-slate-800"
+              "relative overflow-hidden rounded-md h-full",
+              !category.photo && "bg-green-300"
             )}
           >
-            {category.title}
-          </p>
-        </div>
-      </a>
-    </Link>
+            {category.photo && (
+              <FillImage
+                alt={`Foto da categoria ${category.title}`}
+                image={category.photo}
+                className="object-cover rounded-md brightness-90"
+              />
+            )}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <h2
+                className={clsx(
+                  "text-2xl font-semibold sm:text-3xl px-4 py-2 rounded-md",
+                  category.photo
+                    ? "text-slate-900 backdrop-blur-md bg-slate-50/50"
+                    : "text-slate-800"
+                )}
+              >
+                {category.title}
+              </h2>
+            </div>
+          </div>
+        </a>
+      </Link>
+    </div>
   );
 }

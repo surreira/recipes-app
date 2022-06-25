@@ -21,8 +21,8 @@ export default function RecipeCard({ recipe }: RecipeCardProps): JSX.Element {
           >
             <FillImage
               alt={`Foto da receita ${recipe.title}`}
+              className="object-cover object-center rounded-t-sm brightness-95"
               image={recipe.photo}
-              className="object-cover rounded-t-sm"
             />
             <div className="absolute inset-0 flex items-center justify-center">
               <h2
