@@ -10,10 +10,15 @@ interface RecipeCardProps {
 
 export default function RecipeCard({ recipe }: RecipeCardProps): JSX.Element {
   return (
-    <article className="h-48 border border-green-700 rounded-lg shadow-md active:shadow-none sm:h-52 xl:h-56">
+    <article className="h-48 rounded-md shadow-md active:shadow-none sm:h-52 xl:h-56">
       <Link href={`/receita/${recipe.slug}`}>
         <a className="w-full h-full">
-          <div className="relative overflow-hidden bg-green-300 rounded-t-lg h-3/4">
+          <div
+            className={clsx(
+              "relative overflow-hidden rounded-t-md h-3/4",
+              !recipe.photo && "bg-green-300"
+            )}
+          >
             <FillImage
               alt={`Foto da receita ${recipe.title}`}
               image={recipe.photo}
@@ -22,7 +27,7 @@ export default function RecipeCard({ recipe }: RecipeCardProps): JSX.Element {
             <div className="absolute inset-0 flex items-center justify-center">
               <h2
                 className={clsx(
-                  "text-xl font-semibold text-slate-900 sm:text-2xl md:text-3xl py-2 px-4 rounded-md mx-2 sm:mx-4 md:mx-8 text-center",
+                  "text-xl font-semibold text-slate-900 sm:text-2xl md:text-3xl p-2 rounded-md mx-8 md:mx-12 text-center",
                   recipe.photo && "backdrop-blur-md bg-slate-50/50"
                 )}
               >
