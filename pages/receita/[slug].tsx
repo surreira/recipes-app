@@ -6,7 +6,6 @@ import sanityClient from "@/lib/sanity";
 import type { Accessory, Recipe, Step } from "@/types/data";
 import type { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
-import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 
 interface ReceitaPageProps {
@@ -70,14 +69,6 @@ export default function Receita({ recipe }: ReceitaPageProps): JSX.Element {
                 </ul>
               </div>
             )}
-          </div>
-
-          <div className="inline-block w-full mb-6">
-            <Link href={`/lista/${recipe.categorySlug}`}>
-              <a className="px-4 py-2 text-green-700 border border-green-700 rounded-md active:bg-green-100 active:shadow-inner">
-                Voltar
-              </a>
-            </Link>
           </div>
         </div>
 

@@ -4,7 +4,6 @@ import sanityClient from "@/lib/sanity";
 import type { Category, Recipe } from "@/types/data";
 import type { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
-import Link from "next/link";
 
 interface ListaPageProps {
   category: Category;
@@ -24,14 +23,6 @@ export default function Lista({ category }: ListaPageProps): JSX.Element {
           <RecipeCard key={recipe._id} recipe={recipe} />
         ))}
       </section>
-
-      <div className="flex mt-12">
-        <Link href="/">
-          <a className="px-4 py-2 text-green-700 border border-green-700 rounded-md active:bg-green-100 active:shadow-inner">
-            Voltar
-          </a>
-        </Link>
-      </div>
     </div>
   );
 }
