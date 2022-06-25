@@ -1,5 +1,5 @@
-import FillImage from "@/components/fill-image";
 import ClockIcon from "@/components/icons/clock";
+import ResponsiveImage from "@/components/responsive-image";
 import { Recipe } from "@/types/data";
 import clsx from "clsx";
 import Link from "next/link";
@@ -20,7 +20,7 @@ export default function RecipeCard({ recipe }: RecipeCardProps): JSX.Element {
               !recipe.photo && "bg-green-300"
             )}
           >
-            <FillImage
+            <ResponsiveImage
               alt={`Foto da receita ${recipe.title}`}
               className="object-cover object-center rounded-t-sm brightness-95"
               image={recipe.photo}

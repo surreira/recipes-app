@@ -1,4 +1,4 @@
-import FillImage from "@/components/fill-image";
+import ResponsiveImage from "@/components/responsive-image";
 import { Category } from "@/types/data";
 import clsx from "clsx";
 import Link from "next/link";
@@ -19,7 +19,7 @@ export default function CategoryCard({ category }: CategoryCardProps) {
             )}
           >
             {category.photo && (
-              <FillImage
+              <ResponsiveImage
                 alt={`Foto da categoria ${category.title}`}
                 image={category.photo}
                 className="object-cover rounded-md brightness-90"

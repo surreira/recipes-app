@@ -1,6 +1,6 @@
-import FillImage from "@/components/fill-image";
 import ClockIcon from "@/components/icons/clock";
 import FoldersIcon from "@/components/icons/folders";
+import ReponsiveImage from "@/components/responsive-image";
 import StepSlider from "@/components/step-slider";
 import sanityClient from "@/lib/sanity";
 import type { Accessory, Recipe, Step } from "@/types/data";
@@ -65,7 +65,7 @@ export default function Receita({ recipe }: ReceitaPageProps): JSX.Element {
                 recipe.photo ? "bg-white" : "bg-green-300"
               )}
             >
-              <FillImage
+              <ReponsiveImage
                 alt={`Foto da receita ${recipe.title}`}
                 image={recipe.photo}
                 className="object-cover rounded-t-md"
