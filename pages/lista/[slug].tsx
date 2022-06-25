@@ -79,7 +79,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         title,
         'slug': slug.current,
         time,
-      },
+      } | order(title asc),
     }[0]`,
     { slug: params?.slug }
   );
