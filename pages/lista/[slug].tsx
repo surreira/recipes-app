@@ -1,4 +1,5 @@
 import Header from "@/components/header";
+import ClockIcon from "@/components/icons/clock";
 import sanityClient from "@/lib/sanity";
 import type { Category, Recipe } from "@/types/data";
 import type { GetStaticPaths, GetStaticProps } from "next";
@@ -34,20 +35,7 @@ export default function Lista({ category }: ListaPageProps): JSX.Element {
                   </h2>
                 </div>
                 <div className="flex items-center px-2 h-1/4">
-                  <svg
-                    className="w-4 h-4 mr-1 text-green-700"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                    ></path>
-                  </svg>
+                  <ClockIcon className="w-4 h-4 mr-1 text-green-700" />
                   {recipe.time?.length !== 0 && (
                     <p className="text-sm">{recipe.time}</p>
                   )}
