@@ -8,7 +8,7 @@ interface HeaderProps {
 
 export default function Header({ title }: HeaderProps): JSX.Element {
   return (
-    <header className="flex items-center justify-between w-full h-16 mt-2 sm:mt-4">
+    <header className="flex items-center justify-between w-full h-16 mt-6">
       <div className="flex items-center space-x-2 sm:space-x-4">
         <Link href="/">
           <a>

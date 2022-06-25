@@ -22,7 +22,7 @@ export default function Layout({ children }: LayoutProps): JSX.Element {
         <meta name="viewport" content="initial-scale=1, viewport-fit=cover" />
       </Head>
 
-      <div className="fixed top-0 z-10 w-full h-3 bg-slate-800" />
+      <div className="fixed top-0 z-10 w-full h-5 bg-slate-800" />
 
       {children}
     </div>
