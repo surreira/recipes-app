@@ -14,7 +14,7 @@ export default function Lista({ category }: ListaPageProps): JSX.Element {
   return (
     <div className="max-w-5xl px-4 mx-auto mb-8 md:mb-24">
       <Head>
-        <title>Lista {category.title} - ReceitasTM</title>
+        <title key="page_title">Lista {category.title} - ReceitasTM</title>
       </Head>
 
       <Header title={category.title} />

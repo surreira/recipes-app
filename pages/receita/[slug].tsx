@@ -17,7 +17,7 @@ export default function Receita({ recipe }: ReceitaPageProps): JSX.Element {
   return (
     <div className="max-w-5xl px-4 mx-auto">
       <Head>
-        <title>{recipe.title} - ReceitasTM</title>
+        <title key="page_title">{recipe.title} - ReceitasTM</title>
       </Head>
 
       <div className="flex flex-row h-screen pt-12 overflow-y-hidden text-gray-800">
