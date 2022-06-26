@@ -54,7 +54,7 @@ export default function Receita({ recipe }: ReceitaPageProps): JSX.Element {
 
       <div className="flex flex-col pt-8 text-gray-800 md:pt-10 md:flex-row md:h-screen md:overflow-y-hidden">
         <div className="flex flex-col w-full md:mr-6 md:w-1/3">
-          <h1 className="block mb-2 text-xl font-bold md:hidden">
+          <h1 className="block mb-2 text-xl font-bold md:hidden standalone:mt-6">
             {recipe.title}
           </h1>
 

@@ -9,7 +9,13 @@ module.exports = {
       center: true,
       padding: "1rem",
     },
-    extend: {},
+    extend: {
+      screens: {
+        standalone: {
+          raw: "(display-mode: standalone)",
+        },
+      },
+    },
   },
   plugins: [],
 };
